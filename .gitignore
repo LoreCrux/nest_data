@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*$py.class
+nest_project
+tokens.json
+*.json
+client_secret*.json
+.env
