@@ -46,8 +46,10 @@ cd nest_data
 python -m venv nest_project
 source nest_project/bin/activate
 ```
-### On Windows: nest_project\Scripts\activate
-
+### On Windows: 
+```bash
+nest_project\Scripts\activate
+```
 3. **Install dependencies**
 ```bash
     pip install -r requirements.txt
