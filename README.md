@@ -46,7 +46,7 @@ cd nest_data
 python -m venv nest_project
 source nest_project/bin/activate
 ```
-# On Windows: nest_project\Scripts\activate
+### On Windows: nest_project\Scripts\activate
 
 3. **Install dependencies**
 ```bash
@@ -56,7 +56,7 @@ source nest_project/bin/activate
 ```bash
 cp .env.example .env
 ```
-# Edit .env with your credentials
+### Edit .env with your credentials
 
 5. **Set up your .env file**
 ```.env
