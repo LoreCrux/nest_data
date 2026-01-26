@@ -4,8 +4,8 @@ from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request as GoogleRequest
 from app.helpers.thermo_helpers import NestDataExtraction
 from dotenv import load_dotenv
-import os
 
+import os
 import google_auth_oauthlib.flow
 import requests, json
 
@@ -76,10 +76,15 @@ def get_data():
     for device in data.get("devices"):
         readings.append(
             {
-                "temperature": NestDataExtraction.get_temperature(device),
-                "mode": NestDataExtraction.get_thermostat_temp_set_points(device),
+                "current_temperature": NestDataExtraction.get_temperature(device),
+                "set_point_heat": NestDataExtraction.get_thermostat_temp_set_points_heat(
+                    device
+                ),
+                "set_point_cool": NestDataExtraction.get_thermostat_temp_set_points_cool(
+                    device
+                ),
                 "status": NestDataExtraction.get_thermostat_hvac_status(device),
-                "heater_threshold": NestDataExtraction.get_thermostat_mode(device),
+                "mode": NestDataExtraction.get_thermostat_mode(device),
             }
         )
     return readings
