@@ -14,10 +14,17 @@ class NestDataExtraction:
         return device["traits"]["sdm.devices.traits.ThermostatHvac"]["status"]
 
     @staticmethod
-    def get_thermostat_temp_set_points(device):
-        return (
-            device["traits"]["sdm.devices.traits.ThermostatTemperatureSetpoint"][
-                "heatCelsius"
-            ],
-            ["coolCelsius"],
-        )
+    def get_thermostat_temp_set_points_heat(device):
+        return device["traits"]["sdm.devices.traits.ThermostatTemperatureSetpoint"][
+            "heatCelsius"
+        ]
+
+    @staticmethod
+    def get_thermostat_temp_set_points_cool(device):
+        return device["traits"]["sdm.devices.traits.ThermostatTemperatureSetpoint"][
+            "coolCelsius"
+        ]
+
+    @staticmethod
+    def convert_celsius_to_fahrenheit(celsius_temp):
+        return (celsius_temp * 9 / 5) + 32
