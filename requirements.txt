@@ -29,7 +29,7 @@ MarkupSafe==3.0.3
 mdurl==0.1.2
 oauthlib==3.3.1
 proto-plus==1.27.0
-protobuf==6.33.4
+protobuf==6.33.5
 psycopg==3.3.2
 psycopg-binary==3.3.2
 psycopg-pool==3.3.0
@@ -45,12 +45,12 @@ PyYAML==6.0.3
 requests==2.32.5
 requests-oauthlib==2.0.0
 rich==14.3.1
-rich-toolkit==0.17.1
+rich-toolkit==0.17.2
 rignore==0.7.6
 rsa==4.9.1
-sentry-sdk==2.50.0
+sentry-sdk==2.51.0
 shellingham==1.5.4
-starlette==0.52.1
+starlette==0.50.0
 typer==0.21.1
 typing-inspection==0.4.2
 typing_extensions==4.15.0
