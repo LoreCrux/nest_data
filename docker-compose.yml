@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:16.11
+    container_name: nest_db
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  
+  ingest:
+    build: .
+    container_name: nest_ingest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    volumes:
+      - ./tokens.json:/app/tokens.json
+  
+  grafana:
+    image: grafana/grafana:latest
+    container_name: nest_grafana
+    ports:
+      - "3001:3000"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
